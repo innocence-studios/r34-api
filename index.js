@@ -12,7 +12,8 @@ const data = {
         post: '`/post?id=YOUR_POST_ID` returns the source of the image (if found)',
         search: '`/search?tags=tag1+tag2+tag3&limit=100` returns an array with the id of every image that contains all the tags, with a maxium defined by the limit (default 42, one r34 page)',
         random: '`/random` returns an approximatively random image. Be careful, it doesn\'t block any tag!'
-      }
+      },
+      git: 'https://github.com/innocence-studios/r34-api/'
     });
   },
   '/post': (req, res) => {
@@ -87,9 +88,9 @@ const data = {
               })
               .catch(err => res.status(err.status ? err.status : 500).json({ error: `Something bad happened at the loading of the comments.` }));
           })
-          .catch(err => res.status(err.status ? err.status : 500).json({ error: `Your request was probably invalid. Too high limit may be a cause.` }));
+          .catch(err => res.status(err.status ? err.status : 500).json({ error: `Oops! Something wrong is within the code... 1/X` }));
       })
-      .catch(err => res.status(err.status ? err.status : 500).json({ error: `Oops! Something wrong is within the code...` }));
+      .catch(err => res.status(err.status ? err.status : 500).json({ error: `Oops! Something wrong is within the code... 2/X` }));
   }
 };
 
